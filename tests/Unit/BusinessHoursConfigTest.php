@@ -51,5 +51,20 @@ describe("BusinessHoursConfig", function () {
             ->and($hours["wednesday"][0])->toBe("08:00-12:00")
             ->and($hours["wednesday"][1])->toBe("13:00-17:00");
     });
-});
 
+    test("builds arrays with correct shape for closed exceptions", function () {
+        $config = new BusinessHoursConfig;
+        $date = Carbon::create(2025, 8, 13);
+        $config->exceptions()->closed($date, "Closed for holiday");
+        $config->commit();
+
+        $hours = $config->hoursAsArray();
+
+        expect($hours)->toHaveKey("exceptions")
+            ->and($hours["exceptions"])->toBeArray()
+            ->and(array_keys($hours["exceptions"]))->toContain("2025-08-13")
+            ->and($hours["exceptions"]["2025-08-13"]["hours"])->toBeArray()
+            ->and($hours["exceptions"]["2025-08-13"]["hours"])->toBeEmpty()
+            ->and($hours["exceptions"]["2025-08-13"]["data"])->toBe("Closed for holiday");
+    });
+});

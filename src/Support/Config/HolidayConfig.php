@@ -38,7 +38,7 @@ class HolidayConfig
 
         BusinessHours::config()
             ->exceptions()
-            ->adjustedHours($date, "00:00", "24:00", $name);
+            ->closed($date, $name);
 
         return $this;
     }

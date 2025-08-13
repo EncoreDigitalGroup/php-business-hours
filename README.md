@@ -52,6 +52,9 @@ $config->exceptions()->closed(Carbon::parse("2025-12-25"), "Christmas Day");
 
 ### Adding Holidays
 
+Below is an example of how to create and configure a holiday.
+When creating the holiday, the library will automatically register the date as a closed exception.
+
 ```php
 use Carbon\Carbon;
 
