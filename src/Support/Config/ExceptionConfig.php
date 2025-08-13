@@ -20,7 +20,7 @@ class ExceptionConfig
 
     public function add(Carbon $date, string $open, string $close, ?string $reason = null): self
     {
-        $dateString = $date->format('Y-m-d');
+        $dateString = $date->format("Y-m-d");
         $currentExceptions = $this->exceptions->get($dateString);
 
         if (is_null($currentExceptions)) {
