@@ -1,0 +1,28 @@
+name: Pull Request
+
+on:
+    pull_request_target:
+    workflow_dispatch:
+
+concurrency:
+    group: ${{ github.repository }}-${{ github.event.pull_request.number }}-pullRequest
+    cancel-in-progress: true
+
+jobs:
+    StaticAnalysis:
+        name: StaticAnalysis
+        uses: EncoreSoftware/ci-pipelines/.github/workflows/php_staticAnalysis.yml@v2
+        with:
+            composerAuthJson: ${{ vars.COMPOSER_AUTH_JSON }}
+            phpVersion: '8.3'
+            path: 'src/'
+            branch: ${{ github.head_ref }}
+
+    Test:
+        name: Test
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_pest.yml@v2
+        with:
+            phpVersion: '8.4'
+            branch: ${{ github.head_ref }}
+            enforceCoverage: true
+            runParallel: true
