@@ -1,0 +1,24 @@
+<?php
+/*
+ * Copyright (c) 2025. Encore Digital Group.
+ * All Rights Reserved.
+ */
+
+/*
+|--------------------------------------------------------------------------
+| Test Case
+|--------------------------------------------------------------------------
+|
+| The closure you provide to your test functions is always bound to a specific PHPUnit test
+| case class. By default, that class is "PHPUnit\Framework\TestCase". Of course, you may
+| need to change it using the "pest()" function to bind a different classes or traits.
+|
+*/
+
+use Carbon\Carbon;
+use Cmixin\BusinessDay;
+
+BusinessDay::enable([Carbon::class]);
+
+pest()->extend(Tests\TestCase::class)
+    ->in("Unit");
