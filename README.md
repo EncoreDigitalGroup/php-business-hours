@@ -9,7 +9,6 @@ It allows you to manage business hours, holidays, and exceptions in a robust, ob
 - Type-safe configuration of business hours for each day of the week
 - Support for holidays and exceptions
 - Integration with Spatie OpeningHours and BusinessDay for advanced time calculations
-- PSR-12 and Laravel-style code conventions
 
 ## Requirements
 
