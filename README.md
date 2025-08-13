@@ -36,7 +36,6 @@ $config = BusinessHours::config();
 ### Configuring Business Hours
 
 Below is an example of how to set business hours and how to set exceptions to those business hours.
-When setting an exception, the library will automatically register the date as a holiday.
 
 ```php
 use EncoreDigitalGroup\StdLib\Objects\Calendar\DayOfWeek;
