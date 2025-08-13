@@ -28,7 +28,7 @@ describe("BusinessHoursConfig", function () {
     it("builds arrays with correct shape for exceptions", function () {
         $config = new BusinessHoursConfig;
         $date = Carbon::create(2025, 8, 13);
-        $config->exceptions()->add($date, "12:00", "15:00");
+        $config->exceptions()->adjustedHours($date, "12:00", "15:00");
         $config->commit();
 
         $hours = $config->hoursAsArray();

@@ -19,7 +19,7 @@ class ExceptionConfig
         $this->exceptions = new Collection;
     }
 
-    public function add(Carbon $date, string $open, string $close, ?string $reason = null): self
+    public function adjustedHours(Carbon $date, string $open, string $close, ?string $reason = null): self
     {
         $dateString = $date->format("Y-m-d");
         $currentExceptions = $this->exceptions->get($dateString);
@@ -37,6 +37,20 @@ class ExceptionConfig
         $currentExceptions["data"] = $reason;
 
         $this->exceptions->put($dateString, $currentExceptions);
+
+        return $this;
+    }
+
+    public function closed(Carbon $date, ?string $reason = null): self
+    {
+        $dateString = $date->format("Y-m-d");
+
+        $data = [
+            "hours" => [],
+            "data" => $reason,
+        ];
+
+        $this->exceptions->put($dateString, $data);
 
         return $this;
     }
