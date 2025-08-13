@@ -8,8 +8,6 @@ namespace EncoreDigitalGroup\BusinessHours\Support\Config;
 
 use EncoreDigitalGroup\StdLib\Objects\Calendar\DayOfWeek;
 use EncoreDigitalGroup\StdLib\Objects\Support\Types\Arr;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
 use Spatie\OpeningHours\OpeningHours;
 
 class BusinessHoursConfig

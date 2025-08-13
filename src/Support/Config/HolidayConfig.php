@@ -8,6 +8,7 @@ namespace EncoreDigitalGroup\BusinessHours\Support\Config;
 
 use Carbon\Carbon;
 use Cmixin\BusinessDay;
+use EncoreDigitalGroup\BusinessHours\BusinessHours;
 use Illuminate\Support\Carbon as IlluminateCarbon;
 
 class HolidayConfig
@@ -33,6 +34,10 @@ class HolidayConfig
     {
         /** @phpstan-ignore-next-line */
         Carbon::addHoliday($this->region, $date->format("Y-m-d"), $key, $name, $observed);
+
+        BusinessHours::config()
+            ->exceptions()
+            ->add($date, "00:00", "24:00", $name);
 
         return $this;
     }

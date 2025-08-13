@@ -6,7 +6,7 @@
 
 namespace EncoreDigitalGroup\BusinessHours\Support\Config;
 
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 class ExceptionConfig
