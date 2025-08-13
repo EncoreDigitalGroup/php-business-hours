@@ -26,7 +26,7 @@ class ExceptionConfig
         if (is_null($currentExceptions)) {
             $currentExceptions = $this->createException($open, $close, $reason);
         } elseif (is_array($currentExceptions)) {
-            $currentExceptions = $this->newExcpetion($currentExceptions, $open, $close);
+            $currentExceptions = $this->newException($currentExceptions, $open, $close);
         } else {
             $currentExceptions = [
                 "hours" => [$open . "-" . $close],
@@ -53,7 +53,7 @@ class ExceptionConfig
         ];
     }
 
-    private function newExcpetion(array $exceptions, string $open, string $close): array
+    private function newException(array $exceptions, string $open, string $close): array
     {
         $exceptions["hours"][] = $open . "-" . $close;
 

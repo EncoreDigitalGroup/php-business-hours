@@ -6,7 +6,10 @@
 
 namespace EncoreDigitalGroup\BusinessHours;
 
+use Carbon\Carbon;
+use Cmixin\BusinessDay;
 use EncoreDigitalGroup\BusinessHours\Support\Config\BusinessHoursConfig;
+use Illuminate\Support\Carbon as IlluminateCarbon;
 
 class BusinessHours
 {
@@ -23,7 +26,8 @@ class BusinessHours
         return self::$instance;
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->config = new BusinessHoursConfig;
     }
 

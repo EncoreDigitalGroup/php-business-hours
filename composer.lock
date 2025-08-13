@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29d4229820a32f7b862c7b306db60e68",
+    "content-hash": "1fae7a5ddc78f41c2db898f7ede22605",
     "packages": [
         {
             "name": "brick/math",
@@ -134,6 +134,77 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "cmixin/business-day",
+            "version": "1.20.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kylekatarnls/business-day.git",
+                "reference": "fcf655f70c706c7505a992112b9047a08fa648ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kylekatarnls/business-day/zipball/fcf655f70c706c7505a992112b9047a08fa648ba",
+                "reference": "fcf655f70c706c7505a992112b9047a08fa648ba",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^2.29 || ^3.0.1",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "*",
+                "phpstan/phpstan": "1.* || 2.*",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.31"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cmixin\\BusinessDay\\Laravel\\ServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cmixin\\": "src/Cmixin/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KyleKatarn",
+                    "email": "carbon@selfbuild.fr"
+                }
+            ],
+            "description": "Carbon mixin to handle business days",
+            "support": {
+                "issues": "https://github.com/kylekatarnls/business-day/issues",
+                "source": "https://github.com/kylekatarnls/business-day/tree/1.20.1"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-08-02T06:55:35+00:00"
         },
         {
             "name": "composer/ca-bundle",

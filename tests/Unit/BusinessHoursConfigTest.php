@@ -17,10 +17,7 @@ describe("BusinessHoursConfig", function () {
         $config->day(DayOfWeek::Tuesday)->addHours("10:00", "16:00");
         $config->commit();
 
-        $reflection = new ReflectionClass($config);
-        $property = $reflection->getProperty("hoursArray");
-        $property->setAccessible(true);
-        $hours = $property->getValue($config);
+        $hours = $config->hoursAsArray();
 
         expect($hours)->toHaveKey("monday")
             ->and($hours["monday"])->toBeArray()
@@ -35,12 +32,7 @@ describe("BusinessHoursConfig", function () {
         $config->exceptions()->add($date, "12:00", "15:00");
         $config->commit();
 
-        $reflection = new ReflectionClass($config);
-        $property = $reflection->getProperty("hoursArray");
-        $property->setAccessible(true);
-        $hours = $property->getValue($config);
-
-        //        dd($hours["exceptions"]);
+        $hours = $config->hoursAsArray();
 
         expect($hours)->toHaveKey("exceptions")
             ->and($hours["exceptions"])->toBeArray()
@@ -54,10 +46,7 @@ describe("BusinessHoursConfig", function () {
         $config->day(DayOfWeek::Wednesday)->addHours("13:00", "17:00");
         $config->commit();
 
-        $reflection = new ReflectionClass($config);
-        $property = $reflection->getProperty("hoursArray");
-        $property->setAccessible(true);
-        $hours = $property->getValue($config);
+        $hours = $config->hoursAsArray();
 
         expect($hours["wednesday"])->toBeArray()
             ->and($hours["wednesday"][0])->toBe("08:00-12:00")

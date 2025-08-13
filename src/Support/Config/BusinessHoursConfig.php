@@ -24,6 +24,7 @@ class BusinessHoursConfig
     private ExceptionConfig $exceptions;
     private OpeningHours $hours;
     private array $hoursArray = [];
+    private HolidayConfig $holidays;
 
     public function __construct()
     {
@@ -35,6 +36,7 @@ class BusinessHoursConfig
         $this->friday = new DayConfig;
         $this->saturday = new DayConfig;
         $this->exceptions = new ExceptionConfig;
+        $this->holidays = new HolidayConfig;
     }
 
     public function day(DayOfWeek $day): DayConfig
@@ -62,6 +64,16 @@ class BusinessHoursConfig
         }
 
         return $this->hours;
+    }
+
+    public function hoursAsArray(): array
+    {
+        return $this->hoursArray;
+    }
+
+    public function holidays(): HolidayConfig
+    {
+        return $this->holidays;
     }
 
     public function commit(): void

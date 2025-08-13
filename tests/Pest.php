@@ -15,5 +15,10 @@
 |
 */
 
+use Carbon\Carbon;
+use Cmixin\BusinessDay;
+
+BusinessDay::enable([Carbon::class]);
+
 pest()->extend(Tests\TestCase::class)
     ->in("Unit");
