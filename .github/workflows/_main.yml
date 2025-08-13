@@ -1,8 +1,8 @@
 name: Pull Request
 
 on:
-    pull_request_target:
-    workflow_dispatch:
+    push:
+        branches: [ main ]
 
 concurrency:
     group: ${{ github.repository }}-${{ github.event.pull_request.number }}-pullRequest
