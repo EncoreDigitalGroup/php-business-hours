@@ -1,18 +1,17 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Rights Reserved.
  */
 
 use EncoreDigitalGroup\BusinessHours\Support\Config\BusinessHoursConfig;
-use EncoreDigitalGroup\BusinessHours\Support\Config\DayConfig;
-use EncoreDigitalGroup\BusinessHours\Support\Config\ExceptionConfig;
 use EncoreDigitalGroup\StdLib\Objects\Calendar\DayOfWeek;
 use Illuminate\Support\Carbon;
 
 describe("BusinessHoursConfig", function () {
     it("builds arrays with correct shape for daily hours", function () {
-        $config = new BusinessHoursConfig();
+        $config = new BusinessHoursConfig;
         $config->day(DayOfWeek::Monday)->addHours("09:00", "17:00");
         $config->day(DayOfWeek::Tuesday)->addHours("10:00", "16:00");
         $config->commit();
@@ -27,7 +26,7 @@ describe("BusinessHoursConfig", function () {
     });
 
     it("builds arrays with correct shape for exceptions", function () {
-        $config = new BusinessHoursConfig();
+        $config = new BusinessHoursConfig;
         $date = Carbon::create(2025, 8, 13);
         $config->exceptions()->add($date, "12:00", "15:00");
         $config->commit();
@@ -41,7 +40,7 @@ describe("BusinessHoursConfig", function () {
     });
 
     it("recursively transforms nested collections to arrays", function () {
-        $config = new BusinessHoursConfig();
+        $config = new BusinessHoursConfig;
         $config->day(DayOfWeek::Wednesday)->addHours("08:00", "12:00");
         $config->day(DayOfWeek::Wednesday)->addHours("13:00", "17:00");
         $config->commit();

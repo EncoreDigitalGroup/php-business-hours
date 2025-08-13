@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Rights Reserved.
@@ -12,7 +13,8 @@ class DayConfig
 {
     private Collection $hours;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->hours = new Collection;
     }
 

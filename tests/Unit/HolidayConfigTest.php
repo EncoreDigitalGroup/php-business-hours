@@ -1,11 +1,12 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Rights Reserved.
  */
 
-use EncoreDigitalGroup\BusinessHours\Support\Config\HolidayConfig;
 use Carbon\Carbon;
+use EncoreDigitalGroup\BusinessHours\Support\Config\HolidayConfig;
 
 describe("HolidayConfig", function () {
     test("can set region", function () {
