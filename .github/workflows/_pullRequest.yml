@@ -58,6 +58,16 @@ jobs:
             path: 'src/'
             branch: ${{ github.head_ref }}
 
+    Test:
+        needs: CodeStyle
+        name: Test
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_pest.yml@v2
+        with:
+            phpVersion: '8.4'
+            branch: ${{ github.head_ref }}
+            enforceCoverage: true
+            runParallel: true
+
     AutoMerge:
         needs: [ StaticAnalysis ]
         name: Auto-Merge
