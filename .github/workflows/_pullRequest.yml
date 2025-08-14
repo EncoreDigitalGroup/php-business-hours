@@ -1,7 +1,7 @@
 name: Pull Request
 
 on:
-    pull_request_target:
+    pull_request:
     workflow_dispatch:
 
 concurrency:
@@ -42,18 +42,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: CodeStyle
-                uses: EncoreSoftware/ci-pipelines/actions/php/codeStyle@v2
+                uses: EncoreDigitalGroup/ci-workflows/actions/php/codeStyle@v2
                 with:
                     branch: "${{ github.head_ref }}"
                     repository: "${{ github.repository }}"
-                    composerAuthJson: "${{ vars.COMPOSER_AUTH_JSON }}"
 
     StaticAnalysis:
         needs: CodeStyle
         name: StaticAnalysis
-        uses: EncoreSoftware/ci-pipelines/.github/workflows/php_staticAnalysis.yml@v2
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_larastan.yml@v2
         with:
-            composerAuthJson: ${{ vars.COMPOSER_AUTH_JSON }}
             phpVersion: '8.3'
             path: 'src/'
             branch: ${{ github.head_ref }}

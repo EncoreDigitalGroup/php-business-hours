@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fae7a5ddc78f41c2db898f7ede22605",
+    "content-hash": "f932a90800a0d18f9b3fe6fc3d208655",
     "packages": [
         {
             "name": "brick/math",
@@ -3301,88 +3301,6 @@
                 }
             ],
             "time": "2025-05-08T08:14:37+00:00"
-        },
-        {
-            "name": "phpgenesis/common",
-            "version": "v0.3.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPGenesis/Common.git",
-                "reference": "eb67c879a4bb4aa8e0c6dd619f1d2d5ddb86843f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPGenesis/Common/zipball/eb67c879a4bb4aa8e0c6dd619f1d2d5ddb86843f",
-                "reference": "eb67c879a4bb4aa8e0c6dd619f1d2d5ddb86843f",
-                "shasum": ""
-            },
-            "require": {
-                "composer-runtime-api": "^2.0",
-                "composer/composer": "^2.0",
-                "encoredigitalgroup/stdlib": "^2.0",
-                "illuminate/collections": "^10|^11|^12",
-                "illuminate/database": "^10|^11|^12",
-                "illuminate/support": "^10|^11|^12",
-                "php": "^8.3"
-            },
-            "require-dev": {
-                "laravel/framework": "^10|^11|^12"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/Helpers/helpers.php",
-                    "phpgenesis_helpers.php"
-                ],
-                "psr-4": {
-                    "PHPGenesis\\Common\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Shared Functionality for PHPGenesis",
-            "support": {
-                "source": "https://github.com/PHPGenesis/Common/tree/v0.3.16"
-            },
-            "time": "2025-07-04T22:21:37+00:00"
-        },
-        {
-            "name": "phpgenesis/logger",
-            "version": "v0.3.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPGenesis/Logger.git",
-                "reference": "e6f10660bd5b8deb8aecc8066beb440a90f207ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPGenesis/Logger/zipball/e6f10660bd5b8deb8aecc8066beb440a90f207ae",
-                "reference": "e6f10660bd5b8deb8aecc8066beb440a90f207ae",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/log": "^10|^11|^12",
-                "monolog/monolog": "^3.6",
-                "php": "^8.3",
-                "phpgenesis/common": "self.version"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPGenesis\\Logger\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Logger for PHPGenesis",
-            "support": {
-                "source": "https://github.com/PHPGenesis/Logger/tree/v0.3.16"
-            },
-            "time": "2025-06-27T21:00:20+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8106,16 +8024,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.85.1",
+            "version": "v3.86.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "2fb6d7f6c3398dca5786a1635b27405d73a417ba"
+                "reference": "4a952bd19dc97879b0620f495552ef09b55f7d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/2fb6d7f6c3398dca5786a1635b27405d73a417ba",
-                "reference": "2fb6d7f6c3398dca5786a1635b27405d73a417ba",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/4a952bd19dc97879b0620f495552ef09b55f7d36",
+                "reference": "4a952bd19dc97879b0620f495552ef09b55f7d36",
                 "shasum": ""
             },
             "require": {
@@ -8199,7 +8117,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.85.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.86.0"
             },
             "funding": [
                 {
@@ -8207,7 +8125,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-29T22:22:50+00:00"
+            "time": "2025-08-13T22:36:21+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -9979,17 +9897,62 @@
             "time": "2024-11-09T15:12:26+00:00"
         },
         {
-            "name": "phpgenesis/devutilities",
-            "version": "v0.3.16",
+            "name": "phpgenesis/common",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PHPGenesis/DevUtilities.git",
-                "reference": "4e247a8dd09b2d61d6e9e973e921a87af7615523"
+                "url": "https://github.com/PHPGenesis/Common.git",
+                "reference": "c75f4a0bbf549250edeca3d6573d4f4e00213454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPGenesis/DevUtilities/zipball/4e247a8dd09b2d61d6e9e973e921a87af7615523",
-                "reference": "4e247a8dd09b2d61d6e9e973e921a87af7615523",
+                "url": "https://api.github.com/repos/PHPGenesis/Common/zipball/c75f4a0bbf549250edeca3d6573d4f4e00213454",
+                "reference": "c75f4a0bbf549250edeca3d6573d4f4e00213454",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.0",
+                "composer/composer": "^2.0",
+                "encoredigitalgroup/stdlib": "^2.0",
+                "illuminate/collections": "^10|^11|^12",
+                "illuminate/database": "^10|^11|^12",
+                "illuminate/support": "^10|^11|^12",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "laravel/framework": "^10|^11|^12"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "phpgenesis_helpers.php"
+                ],
+                "psr-4": {
+                    "PHPGenesis\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Shared Functionality for PHPGenesis",
+            "support": {
+                "source": "https://github.com/PHPGenesis/Common/tree/v1.0.0"
+            },
+            "time": "2025-08-10T00:50:20+00:00"
+        },
+        {
+            "name": "phpgenesis/devutilities",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPGenesis/DevUtilities.git",
+                "reference": "3aadb2685e57b3f6278b5dfde16381fbad2eb106"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPGenesis/DevUtilities/zipball/3aadb2685e57b3f6278b5dfde16381fbad2eb106",
+                "reference": "3aadb2685e57b3f6278b5dfde16381fbad2eb106",
                 "shasum": ""
             },
             "require": {
@@ -10013,9 +9976,9 @@
                 "dev"
             ],
             "support": {
-                "source": "https://github.com/PHPGenesis/DevUtilities/tree/v0.3.16"
+                "source": "https://github.com/PHPGenesis/DevUtilities/tree/v1.0.0"
             },
-            "time": "2025-06-27T21:00:18+00:00"
+            "time": "2025-08-10T00:50:19+00:00"
         },
         {
             "name": "phpstan/extension-installer",
