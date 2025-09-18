@@ -7,7 +7,7 @@
 
 namespace EncoreDigitalGroup\BusinessHours\Support\Config;
 
-use Carbon\Carbon;
+use Carbon\CarbonInterface;
 use Illuminate\Support\Collection;
 
 class ExceptionConfig
@@ -19,7 +19,7 @@ class ExceptionConfig
         $this->exceptions = new Collection;
     }
 
-    public function adjustedHours(Carbon $date, string $open, string $close, ?string $reason = null): self
+    public function adjustedHours(CarbonInterface $date, string $open, string $close, ?string $reason = null): self
     {
         $dateString = $date->format("Y-m-d");
         $currentExceptions = $this->exceptions->get($dateString);
@@ -41,7 +41,7 @@ class ExceptionConfig
         return $this;
     }
 
-    public function closed(Carbon $date, ?string $reason = null): self
+    public function closed(CarbonInterface $date, ?string $reason = null): self
     {
         $dateString = $date->format("Y-m-d");
 
