@@ -8,6 +8,8 @@
 namespace EncoreDigitalGroup\BusinessHours\Support\Config;
 
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
+use Carbon\CarbonInterface;
 use Cmixin\BusinessDay;
 use EncoreDigitalGroup\BusinessHours\BusinessHours;
 use Illuminate\Support\Carbon as IlluminateCarbon;
@@ -18,7 +20,7 @@ class HolidayConfig
 
     public function __construct()
     {
-        BusinessDay::enable([IlluminateCarbon::class, Carbon::class]);
+        BusinessDay::enable([IlluminateCarbon::class, Carbon::class, CarbonImmutable::class]);
     }
 
     public function region(string $region): self
@@ -31,7 +33,7 @@ class HolidayConfig
         return $this;
     }
 
-    public function add(Carbon $date, string $key, ?string $name = null, ?bool $observed = null): self
+    public function add(CarbonInterface $date, string $key, ?string $name = null, ?bool $observed = null): self
     {
         /** @phpstan-ignore-next-line */
         Carbon::addHoliday($this->region, $date->format("Y-m-d"), $key, $name, $observed);
