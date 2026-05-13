@@ -23,7 +23,7 @@
         "php": "^8.3",
         "cmixin/business-day": "^1.20",
         "encoredigitalgroup/stdlib": "^2.11",
-        "illuminate/support": "^11|^12",
+        "illuminate/support": "^11|^12|^13",
         "spatie/opening-hours": "^4.2"
     },
     "require-dev": {
