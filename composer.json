@@ -49,7 +49,9 @@
             "Tests\\": "tests/"
         }
     },
-    "scripts": {},
+    "scripts": {
+        "test": "vendor/bin/pest --parallel"
+    },
     "extra": {
         "scripts-dev": {
             "post-update-cmd": [],
